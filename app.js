@@ -35,6 +35,18 @@ app.get('/details', (req, res)=> {
     })
 })
 
+
+//Home details
+app.get('/homedetails/:id', (req, res)=> {
+    let hom_id = Number(req.query.id)
+
+    db.collection('movies').find({id:hom_id}).toArray((err,result)=>
+    {
+        if (err) throw err;
+        res.send(result)
+    })
+})
+
 //Home
 
 app.get('/home',(req,res)=>{
