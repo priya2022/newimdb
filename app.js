@@ -56,6 +56,16 @@ app.get('/home',(req,res)=>{
     })
 })
 
+//Movies
+
+app.get('/movies',(req,res)=>{
+    db.collection('details').find().toArray((err,result)=>
+    {
+        if(err) throw err;
+        res.send(result)
+    })
+})
+
 MongoClient.connect(mongoUrl, (err,connection)=>{
     if(err) console.log('error while connecting')
     db=connection.db('testing');
