@@ -37,10 +37,10 @@ app.get('/details', (req, res)=> {
 
 //to get movie details
 app.get('/moviedetails', (req, res)=> {
-    let hom_id = Number(req.query.id)
+    let mov_id = Number(req.query.id)
     let query = {};
-    if(hom_id) {
-        query = {id:hom_id}
+    if(mov_id) {
+        query = {"id":mov_id}
     }
 
     db.collection('details').find(query).toArray((err,result)=>
