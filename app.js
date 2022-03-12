@@ -38,9 +38,9 @@ app.get('/details', (req, res)=> {
 
 //Home details
 app.get('/hdetails/:id',(req,res) => {
-    let restId  = Number(req.params.id)
+    let movId  = Number(req.params.id)
     // let restId = mongo.ObjectId(req.params.id)
-    db.collection('movies').find({id:restId}).toArray((err,result) =>{
+    db.collection('details').find({id:movId}).toArray((err,result) =>{
         if(err) throw err;
         res.send(result)
     })
