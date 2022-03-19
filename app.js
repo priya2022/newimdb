@@ -71,6 +71,16 @@ app.get('/home',(req,res)=>{
     })
 })
 
+
+//Home Details
+app.get('/homeDetails',(req,res)=>{
+    db.collection('home').find().toArray((err,result)=>
+    {
+        if(err) throw err;
+        res.send(result)
+    })
+})
+
 //Movies
 
 app.get('/movies',(req,res)=>{
